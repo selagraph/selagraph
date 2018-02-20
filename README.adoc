@@ -1,0 +1,131 @@
+= Imaginary Textual
+
+This is the working repository of a textual syntax based on the textual model
+of https://github.com/riboseinc/isodoc[`BasicDocument`].
+
+
+== Goals
+
+Our overarching goal is to allow authors to "`write with light"`. 
+
+Authors can write at the speed of thought, in a lightweight manner that does
+not hinder expression, regardless of the language (ISO 639) and script (ISO
+15924) used.
+
+The output of this format is to be rendered on paper, or on screen based
+displays (i.e., "`in light`").
+
+Enables an end-to-end, author-to-publisher-to-reader flow.
+
+The use cases include:
+
+* representation of frequently-created, structured documents (e.g., Standards,
+  journal publications). Most of these are served by templates today.
+
+* representation of large documents that are not often changed (e.g., the
+  Bible, dictionaries).
+
+* underlying data representation of HTML rendered pages, WYSIWYG text inputs.
+
+
+=== What it is not
+
+* It is not a text format (e.g., AsciiDoc, Markdown).
+
+* It is not a templating language (e.g., ERB, liquid).
+
+* It is not a rendering language (e.g., HTML, EPUB).
+
+* It is not a DSL (e.g., Skribiblio)
+
+
+== Principles
+
+Imaginary Textual is:
+
+* Programmable: the document is the program
+
+** Every element in the text document is an object, that contains attributes
+  and methods that the author can communicate with. e.g., a table within a
+  document can be queried for rows and values.
+
+** Every element can be referred to.
+
+** Contextual. There is no context-switching needed for writing document methods
+   vs creating text. It is all natural.
+
+** User-defined methods. Methods can be defined within or outside of the document.
+
+* Lightweight: easy to learn and use.
+
+** Just like Markdown and AsciiDoc, its commands are easy to use and
+  understand. At most a `cheat sheet` reference is necessary for its fully
+  functionality.
+
+* Reproducible: deterministic, only one output is produced per document as it
+  is/was defined.
+
+** Existing word processors occasionally produce different output according to
+  platforms or versions.
+
+* Readable: no word processor necessary.
+
+** Just like Markdown and AsciiDoc, it can be treated as a lightweight,
+  textual document, readable and manipulated by the plainest-of-plain text
+  editors such as TextEdit or Notepad (and of course, IDEs). 
+
+* Layout aware: the document needs to be aware whether the resulting layout is
+  flowing (HTML) or page based (paper, PDF, doc)
+
+** Supports RTL and vertical layouts.
+
+* Language agnostic: supports any language
+
+** Including RTL, Asian ruby layouts
+
+* Language independent commands: the command set of this language is language-agnostic.
+
+** One can use simple commands to author a document regardless of the platform
+  and different language input methods. For example, AsciiDoc takes commands
+  with underscores (`_`) but the same keystroke means different things with
+  other languages, requiring a input method switch back to ASCII to access a
+  command.
+
+* Structured and model-based: there is only one and a single representation of
+  the document in digital format.
+
+** This ensures that what-you-write-is-what-others-see (WYWIWOS, wii-wii-wos),
+  the representation is determined at authoring-time, not rendering-time.
+
+** This enables document validation and rules to be set at the schema level,
+  such as with the case of `IsoDoc`, so that validation and editorial rules can
+  be performed automatically rather than manually.
+
+** Supports the `BibliographicItem` model that will be developed with ISO TC 46,
+  and can be seen at the `IsoDoc` page.
+
+** This allows deterministic transforms from the document model into any
+  existing document format, such as Word's `doc` or `docx`.
+
+* Extensible: any party can provide an extension module to allow others to
+  write in their defined format.
+
+** For example, to author an ISO Standard today one needs to have a document
+  template, fully understand all the directives, and when a document goes to
+  publish it will be hit by feedback determined by human validation. This
+  language allows all of these rules to be coded and distributed, and the
+  validation feedback occurs at author-time, not publish-time.
+
+** Publisher: this allows a publisher to change their rendering format and
+  immediately re-publish previous items in the new output.
+
+** Author: this allows an author to publish the same document to multiple
+  publishers with minimal (or no) changes.
+
+* Streamable: supports representation of a divisible model and as a series of
+  model patches
+
+** Any updates must be divisible and support collaborative edits.  We cannot
+assume, especially in the case of a long document, that its entirety can be
+easily transferred as a single update.
+  
