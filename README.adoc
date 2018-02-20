@@ -128,4 +128,12 @@ Imaginary Textual is:
 ** Any updates must be divisible and support collaborative edits.  We cannot
 assume, especially in the case of a long document, that its entirety can be
 easily transferred as a single update.
+
+* Support security features: integrity, confidentiality, authenticity.
+
+** This allows us to say, encrypt (e.g., OpenPGP) a section (or the whole
+  document) that can only be edited or viewed by certain recipients.
+
+** Authenticity via digital signatures (and integrity via hashes), of sections,
+  or the whole document.
   
