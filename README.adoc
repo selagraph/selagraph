@@ -131,7 +131,7 @@ easily transferred as a single update.
 
 * Support security features: integrity, confidentiality, authenticity.
 
-** This allows us to say, encrypt (e.g., OpenPGP) a section (or the whole
+** This allows us to say, encrypt (e.g., https://github.com/riboseinc/rnp[RNP] or OpenPGP) a section (or the whole
   document) that can only be edited or viewed by certain recipients.
 
 ** Authenticity via digital signatures (and integrity via hashes), of sections,
