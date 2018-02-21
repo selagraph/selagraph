@@ -43,18 +43,23 @@ The use cases include:
 
 Imaginary Textual is:
 
+* An toolchain that spans from text input to the publishing of its content.
+
 * Programmable: the document is the program
 
 ** Every element in the text document is an object, that contains attributes
   and methods that the author can communicate with. e.g., a table within a
-  document can be queried for rows and values.
-
-** Every element can be referred to.
+  document can be queried for rows and values. Every element can be referred to.
 
 ** Contextual. There is no context-switching needed for writing document methods
    vs creating text. It is all natural.
 
 ** User-defined methods. Methods can be defined within or outside of the document.
+
+** Other than the native language, it should also support multiple programming
+  languages (e.g., via a binding).  Code files may be distributed in system
+  packages or together with the document. Code may reside within the document
+  or in separately "included" files.
 
 * Lightweight: easy to learn and use.
 
@@ -120,20 +125,34 @@ Imaginary Textual is:
   immediately re-publish previous items in the new output.
 
 ** Author: this allows an author to publish the same document to multiple
-  publishers with minimal (or no) changes.
+  publishers with minimal (or no) changes, such as the same article to be
+  submitted to multiple journals.
 
 * Streamable: supports representation of a divisible model and as a series of
   model patches
 
 ** Any updates must be divisible and support collaborative edits.  We cannot
-assume, especially in the case of a long document, that its entirety can be
-easily transferred as a single update.
+  assume, especially in the case of a long document, that its entirety can be
+  easily transferred as a single update.
 
 * Support security features: integrity, confidentiality, authenticity.
 
-** This allows us to say, encrypt (e.g., https://github.com/riboseinc/rnp[RNP] or OpenPGP) a section (or the whole
-  document) that can only be edited or viewed by certain recipients.
+** This allows us to say, encrypt (e.g., OpenPGP through
+  https://github.com/riboseinc/rnp[RNP]) a section (or the whole document) that
+  can only be edited or viewed by certain recipients.
 
 ** Authenticity via digital signatures (and integrity via hashes), of sections,
   or the whole document.
-  
+
+* Reviewable and annotate-able: allow adding contextual meta-data, such as
+  comments and review edits
+
+** Just like how Microsoft Word / Google Drive allows adding comments
+  applicable to a range and allow review edits or suggestions. These
+  meta-objects should directly apply to, but not modify, the document model.
+
+** Many document collaborative cases, such as ISO document editing sessions,
+  rely on such functionality, often with editors making direct edits to provide
+  review comments. These comments must be able to be distributed separately
+  from the document itself; such as replacing the need of a commenting form.
+
